@@ -122,7 +122,7 @@ class HashTable:
             
         return False
                 
-   #rehash     # 間違っているやつ　
+   #rehash     # wrong one but dont know why...　
     """
     def expand(self):
         old_buckets = self.buckets

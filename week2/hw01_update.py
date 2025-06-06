@@ -5,7 +5,7 @@ def calculate_hash(key):
     hash = 0
     primes = [23,29,31,37,41,43,47,53,59,61]
     for i,ch in enumerate(key):
-        hash = ord(ch) + hash* primes[i%len(primes)] 
+        hash = ord(ch) + hash * primes[i%len(primes)] 
     
     return hash
 

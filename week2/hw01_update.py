@@ -80,7 +80,7 @@ class HashTable:
 
     def expand(self):
         old_buckets = self.buckets
-        self.bucket_size = self.bucket_size *2 +1
+        self.bucket_size = self.bucket_size *2
         self.buckets = [None] * self.bucket_size
         
         for old_item in old_buckets : # old item is the head of list in bucket...

@@ -50,29 +50,29 @@ def solve(cities, alpha = 0.5, beta = 3, evaporation= 0.8, iterations = 50,num_a
         for k in range(num_ants):
             #print (" now ant index is", k)
             visited = [False] * N
-            start = random.randrange(0, N)
+            start = random.randrange(0, N)  #任意のcityをスタート点にして、局所最適を回避
             tour = [start]
             current = start
             visited[current] = True
             
             while len(tour) < N:
                 probabilities = []
-                candidate_cities = []
+                unvisited_cities = []
                 # 現在currentにいる
-                for city in range(N):     #現地から訪問したcityへの訪問率は0？
-                    if not visited[city]: #訪問したことないcityへの訪問率を計算？
+                for city in range(N):     
+                    if not visited[city]:  #訪問したことないcityへの訪問率を計算
                         #print(f"pheromone_level[{current}][{city}] = {pheromone_level[current][city]}")
                         # product of heuristic and pheromone , later will calculate p 
                         weight= (pheromone_level[current][city]**alpha) * (heuristic_info[current][city]**beta)
-                        candidate_cities.append(city)
+                        unvisited_cities.append(city)
                         probabilities.append(weight)
                 sum_of_probability = sum(probabilities)
                 probabilities = [ x / sum_of_probability for x in probabilities]
                 q = random.random()
                 if q < q0:
                     
-                    next = candidate_cities[probabilities.index(max(probabilities))]
-                else: next =  random.choices(candidate_cities, weights=probabilities)[0]
+                    next = unvisited_cities[probabilities.index(max(probabilities))]
+                else: next =  random.choices(unvisited_cities, weights=probabilities)[0]
                 visited[next] = True
                 tour.append(next)
                 current = next

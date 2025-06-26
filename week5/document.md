@@ -1,7 +1,7 @@
 
 # Method
 
-Ant colony optimization with 2-opt: when a shorter path is found, apply 2-opt for local exploration to further improve the solution, in order to avoid local optima.
+Apply ant colony optimization, when a shorter path is found, apply 2-opt for local exploration to further improve the solution, in order to avoid local optima.
 
 # Result
 | Challenge | Length    |
@@ -25,6 +25,7 @@ as first, wanted to apply 2opt for each found path but cost too much time, that 
 
 **when size of cities is too small**
 shortest path is the same as that found by greedy.
+
 
 
 # Reference

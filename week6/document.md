@@ -1,3 +1,11 @@
+# update 
+Tried a faster 2-opt with limited iterations and partial edge checks per iteration 
+ ([reference](https://github.com/GabryGao/google-step-6/blob/main/solver_2opt.py) )
+ 
+ time is shortened to be 2200s in challenge6 
+ 
+ but the shortest way it found is  46980.13... maybe should change these two parameter **max_iters=10, max_checks_per_iter=20000** to make 2opt more effective
+
 # what is different from week5
 
 use 2opt for each ant finish its tour, but really cost much time.
@@ -18,3 +26,6 @@ time 819s
 - challenge 6:  
 distance 42548     
 time ~17000s
+
+
+

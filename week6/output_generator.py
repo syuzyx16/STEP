@@ -4,6 +4,7 @@ import sys
 import solver_greedy
 import solver_random
 import solver_aco
+import solver_aco_lite2opt
 
 
 CHALLENGES = 7
@@ -11,7 +12,8 @@ CHALLENGES = 7
 solvers = {
     'greedy': solver_greedy,
     'random': solver_random,
-    'aco': solver_aco
+    'aco': solver_aco,
+    'aco_lite' : solver_aco_lite2opt
 }
 
 def generate_output(solver):

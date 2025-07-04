@@ -1,0 +1,20 @@
+# what is different from week5
+
+use 2opt for each ant finish its tour, but really cost much time.
+since realize in interation 21~100, rarely find better tour,  finaly choose to decrease interation from 100 to 20 and decrease number of ants to save more time
+
+# as a result
+  - when change parameter of aco for several times, didn't improve much
+
+  - when apply 2opt to each ant, even if interation and ants' number are decreased ( and costed more time)
+  at least result became better
+
+# run time and result for challenge 5 & 6
+
+- challenge 5:  
+distance 20956     
+time 819s
+
+- challenge 6:  
+distance 42548     
+time ~17000s

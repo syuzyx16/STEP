@@ -45,6 +45,7 @@ my_heap_t my_heap[BIN_NUM];
 // Helper functions (feel free to add/remove/edit!)
 //
 
+//free bins 
 int find_bin(size_t size) {
   for (int i = 0; i < BIN_NUM; i++) {
     if (size <= my_heap[i].upper_bound) 
@@ -89,9 +90,11 @@ void my_initialize() {
 // mmap_from_system() / munmap_to_system().
 void *my_malloc(size_t size) {
   while (1) {
+    //best fit, if not find, ask for new memory then into next loop 
     int heap_idx = find_bin(size);
     my_metadata_t *best = NULL;
     my_metadata_t *best_prev = NULL;
+
     int best_idx = -1;
     my_metadata_t *prev = NULL;
     my_metadata_t *current = NULL;
